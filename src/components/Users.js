@@ -12,6 +12,13 @@ class Users extends Component {
       // nested: {},
     };
   }
+
+  componentDidUpdate() {
+    if (this.props.users.length === 0) {
+      throw new Error("No users provided");
+    }
+  }
+
   toggleUsersHandler() {
     //merges old state
     this.setState((curState) => {
